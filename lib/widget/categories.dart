@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/utils/categories_provider.dart';
+import 'package:news_app/services/categories_provider.dart';
 import 'package:news_app/widget/category_cards.dart';
 
-class CateogriesScreen extends StatefulWidget {
-  const CateogriesScreen({
+class CateogriesListView extends StatefulWidget {
+  const CateogriesListView({
     super.key,
     required this.categories,
   });
   final List<Categories> categories;
 
   @override
-  State<CateogriesScreen> createState() => _CateogriesScreenState();
+  State<CateogriesListView> createState() => _CateogriesListViewState();
 }
 
-class _CateogriesScreenState extends State<CateogriesScreen> {
+class _CateogriesListViewState extends State<CateogriesListView> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -41,7 +41,7 @@ class _CateogriesScreenState extends State<CateogriesScreen> {
           ],
         ),
         SizedBox(
-          height: 150,
+          height: 100,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: categoryList.length,

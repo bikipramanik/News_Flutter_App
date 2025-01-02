@@ -1,5 +1,3 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 enum Categories {
   business,
   sports,
@@ -9,6 +7,15 @@ enum Categories {
   technology,
   politics,
   weather,
+}
+
+class CategoryDetails {
+  CategoryDetails({
+    required this.categoryName,
+    required this.categoryImagePath,
+  });
+  final String categoryName;
+  final String categoryImagePath;
 }
 
 final List<CategoryDetails> categoryList = [
@@ -45,24 +52,3 @@ final List<CategoryDetails> categoryList = [
     categoryImagePath: "lib/assets/weather_category.jpg",
   ),
 ];
-
-class CategoryDetails {
-  CategoryDetails({
-    required this.categoryName,
-    required this.categoryImagePath,
-  });
-  final String categoryName;
-  final String categoryImagePath;
-}
-
-class _CategoriesStateNotifier extends StateNotifier<List> {
-  _CategoriesStateNotifier() : super([]);
-  Future<void> weather() async {
-    state = [];
-  }
-}
-
-final categoryProvider =
-    StateNotifierProvider<_CategoriesStateNotifier, List>((ref) {
-  return _CategoriesStateNotifier();
-});

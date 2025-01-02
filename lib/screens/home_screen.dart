@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/utils/categories_provider.dart';
+import 'package:news_app/services/categories_provider.dart';
+import 'package:news_app/widget/breaking_news.dart';
 import 'package:news_app/widget/categories.dart';
+import 'package:news_app/widget/trending_news.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -37,11 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: ListView(
         children: [
-          CateogriesScreen(categories: Categories.values),
-          Text(
-            "HAHAHA",
-            style: TextStyle(fontSize: 50),
-          ),
+          CateogriesListView(categories: Categories.values),
+          Breakingnews(),
+          TrendingNews(),
         ],
       ),
     );
